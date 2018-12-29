@@ -1,0 +1,75 @@
+{
+  "default": {
+    "starttime": "22",
+    "kafkabrokes":"192.168.44.102:9092,192.168.44.103:9092,192.168.44.104:9092",
+    "kafkatopic":"com.samples.clj"
+  },
+  "getpath": [
+    {
+      "url":"http://61.161.206.242:48081/getMdt",
+      "command":"mdtl",
+      "updatetime":"0"
+    },
+    {
+      "url":"http://61.161.206.242:48081/getCompany",
+      "command":"company",
+      "updatetime":"0"
+    },{
+      "url":"http://192.168.44.172:8001/data/queryAdvertInfoList",
+      "command":"adv_list",
+      "updatetime":"10m"
+    },
+    {
+      "url":"http://192.168.44.172:8001/data/queryHistoryCommandList",
+      "command":"order_list",
+      "updatetime":"10m"
+    },
+    {
+      "url":"http://192.168.44.172:8001/data/queryElectricFenceList",
+      "command":"adv_fen",
+      "updatetime":"10m"
+    }
+  ],
+  "postpath": [
+    {
+      "url":"http://61.161.206.242:48081/getCar",
+      "startpos":"0",
+      "endpos":"1000",
+      "command":"car",
+      "startdate":"0",
+      "updatetime":"0"
+    },
+    {
+      "url":"http://61.161.206.242:48081/getDriver",
+      "startpos":"0",
+      "endpos":"1000",
+      "command":"driver",
+      "startdate":"0",
+      "updatetime":"0"
+    },
+    {
+      "url":"http://192.168.44.172:8001/data/queryDeviceList",
+      "startpos":"0",
+      "endpos":"1000",
+      "command":"dev_list",
+      "startdate":"0",
+      "updatetime":"10m"
+    },
+    {
+      "url":"http://192.168.44.172:8001/data/queryCommandDetailList",
+      "startpos":"0",
+      "endpos":"1000",
+      "command":"order_detail",
+      "startdate":"2018-12-01",
+      "updatetime":"10m"
+    },
+    {
+      "url":"http://192.168.44.172:8001/data/queryDeviceAdvertList",
+      "startpos":"0",
+      "endpos":"1000",
+      "command":"dev_detail",
+      "startdate":"2018-12-01",
+      "updatetime":"10m"
+    }
+  ]
+}
